@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="liberaryFiles/font-awesome.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <!-- <link rel="stylesheet" href="./liberaryFiles/jquery-ui.css" /> -->
+    <script src="liberaryFiles/jquery-1.12.4.js"></script>
+    <script src="liberaryFiles/jquery-ui.js"></script>
+    <script src="liberaryFiles/jquery.dialogextend.min.js"></script>
+    <script src="liberaryFiles/font-awesome.js"></script>
+    <style>
+      /* .ui-dialog-titlebar {
+        background-color: red;
+      } */
+
+      .ui-widget-header {
+        background-color: rgba(0, 34, 255, 0.04);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="attributTabe"
+      style="overflow: auto; width: 1000px; height: 800px; display: none;"
+      title="جدول البيانات الوصفيه"
+    ></div>
+    <button id="toggleAttribute"><i class="fas fa-table"></i></button>
+
+    <script>
+      $(function () {
+        $("#attributTabe")
+          .dialog({
+            autoOpen: false,
+            show: {
+              effect: "blind",
+              duration: 1000,
+            },
+            hide: {
+              effect: "explode",
+              duration: 1000,
+            },
+            width: 500,
+          })
+          .dialogExtend({
+            closable: true,
+            maximizable: true,
+            minimizable: true,
+            collapsable: true,
+            dblclick: "collapse",
+            titlebar: "transparent",
+            minimizeLocation: "right",
+            icons: {
+              close: "ui-icon-circle-close",
+              maximize: "ui-icon-circle-plus",
+              minimize: "ui-icon-circle-minus",
+              collapse: "ui-icon-triangle-1-s",
+              restore: "ui-icon-bullet",
+            },
+            load: function (evt, dlg) {
+              //   console.log(evt.type);
+            },
+            beforeCollapse: function (evt, dlg) {
+              //   console.log(evt.type);
+            },
+            beforeMaximize: function (evt, dlg) {
+              //   console.log(evt.type);
+            },
+            beforeMinimize: function (evt, dlg) {
+              //   console.log(evt.type);
+            },
+            beforeRestore: function (evt, dlg) {
+              //   console.log(evt.type);
+            },
+            collapse: function (evt, dlg) {
+              //   console.log(evt.type);
+            },
+            maximize: function (evt, dlg) {
+              //   console.log(evt.type);
+            },
+            minimize: function (evt, dlg) {
+              //   console.log(evt.type);
+            },
+            restore: function (evt, dlg) {
+              //   console.log(evt.type);
+            },
+          });
+        $("#toggleAttribute").on("click", function () {
+          $("#attributTabe").dialog("open");
+        });
+      });
+    </script>
+  </body>
+</html>
